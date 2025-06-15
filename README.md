@@ -1,110 +1,123 @@
-# Personalized AAC Assistant Using Large Language Models (LLMs)
+# Personalized AAC Assistant using RAG and LLaMA 3
 
 **Authors**: Mohan Kakarla, Udit Brahmadevara  
-
+**Type**: Academic Project – SUNY Buffalo  
+**Domain**: Human-Centered AI | Assistive Communication | Personalization  
 
 ---
 
 ## 🧠 Abstract
 
-Augmentative and Alternative Communication (AAC) systems assist individuals with speech impairments. However, most existing AAC tools generate generic and impersonal text that fails to reflect users’ identities, experiences, or communicative intent. This project leverages Large Language Models (LLMs), personalization, and Retrieval-Augmented Generation (RAG) to enable more expressive and contextually grounded AAC outputs.
-
-We aim to build a system that understands the user’s history, preferences, and prior conversations and then generates tailored responses to improve inclusiveness, emotional accuracy, and overall communicative authenticity.
+This project explores an **Augmentative and Alternative Communication (AAC)** system powered by a **Retrieval-Augmented Generation (RAG)** pipeline and a **fine-tuned LLaMA 3 8B-Instruct** model. It is designed to support individuals with limited verbal communication by suggesting **personalized, context-aware responses** that reflect their unique persona and communication style.
 
 ---
 
-## 🎯 Objectives
-
-- Develop a personalized AAC assistant using a finetuned LLM.
-- Incorporate Retrieval-Augmented Generation (RAG) for memory retrieval.
-- Enable persona-aware prompting to match a user's style, tone, and prior context.
-- Provide a user-friendly interface for AAC users to interact via the model.
+<div align="center">
+  <img src="assets/architecture.png" width="80%" alt="System Architecture" />
+</div>
 
 ---
 
-## 🏗️ System Architecture
+## 🎯 Project Objectives
 
-- **Frontend**: Streamlit interface  
-- **Backend**:  
-  - Finetuned LLaMA model (loaded via HuggingFace or local path)  
-  - FAISS-based vector store to store and retrieve user-specific memory  
-  - Personalization layer (prompt engineering with profiles)  
-- **Data Format**: JSON file for user histories (`user_profiles.json`)  
-- **Archutecture**:  
-  ![System Architecture](media/architecture.png)
-- **Fronted UI**:  
-  ![UI Screenshot](media/ui.png)
+- 🧠 Aid non-speaking individuals by generating meaningful verbal suggestions based on intent and personal communication profiles.
+- 🔎 Use **RAG** to retrieve relevant past narratives or experiences to ground model outputs.
+- 🤖 Employ a **fine-tuned LLaMA 3 8B-Instruct** LLM to ensure fluent, coherent, and identity-preserving communication.
+- 🧩 Build an accessible, modular, and visually intuitive AAC interface using **Streamlit**.
 
 ---
 
-## 🧪 Key Features
+## 🧰 Core Technologies
 
-- 🤖 Finetuned LLM to generate expressive responses  
-- 🧠 Memory-aware RAG embeds user profile and history into every response  
-- 👤 Multiple personas and modes (friendly, emotional, fact-based)  
-- 🎥 Demo available: [Demo.mp4](Demo.mp4)
+| Component             | Description                                                               |
+|-----------------------|---------------------------------------------------------------------------|
+| 🧠 LLM Backbone        | Fine-tuned LLaMA 3 8B-Instruct model (hosted externally on Kaggle)        |
+| 🧩 RAG Framework       | FAISS-based similarity search with Sentence-BERT embeddings               |
+| 📄 User Profiles       | JSON-based profiles storing communication style, history, tone, summary  |
+| 💬 Frontend            | Streamlit chat UI with multiple responses and user-influence inputs       |
+| 🗃️ Text Chunking       | RecursiveCharacterTextSplitter with dynamic chunk size and overlap        |
 
 ---
 
-## 📁 File Structure
+## 🔍 Key Features
+
+- 👥 **Multiple user personas**: Select between different tones (empathetic, humorous, concise, etc.).
+- 🧾 **Customizable prompts**: Add "influence" like *Be humorous*, *Ask a question*, *Agree*.
+- 🔁 **Multiple LLM responses**: Generate and choose from multiple options for each input.
+- ⚙️ **Chunked RAG retrieval**: Customize chunking for better retrieval of personal context.
+- 🛠️ **Debugging panel**: Inspect prompt formatting and retrieved narratives live.
+
+---
+
+## 📄 Academic Report
+
+Refer to [`report.pdf`](report.pdf) for:
+
+- Background on AAC systems and user-centered design.
+- Model fine-tuning pipeline, hyperparameters, and evaluation.
+- Dataset preparation and tokenizer configuration.
+- System usability insights, limitations, and future work.
+
+---
+
+## 🗂️ File Structure
 
 ```
-├── app.py              # Streamlit frontend
-├── Code.ipynb          # Main logic development
-├── Training.ipynb      # Fine-tuning and model experimentation
-├── user_profiles.json  # Stores prior conversations and preferences
-├── requirements.txt    # Python dependencies
-├── report.pdf          # Academic paper
-├── Demo.mp4            # Demo video
+├── app.py                  # Streamlit web app (production entrypoint)
+├── Code.ipynb              # Core development notebook
+├── Training.ipynb          # Fine-tuning LLaMA 3 notebook
+├── user_profiles.json      # Communication style + memory settings
+├── report.pdf              # Academic report
+├── requirements.txt        # Python dependencies
+├── README.md               # Project overview
+├── Demo.mp4                # Walkthrough video
 └── media/
-    ├── architecture.png
-    └── ui.png
+    ├── architecture.png    # System architecture diagram
+    └── ui.png              # UI screenshot
 ```
 
 ---
 
-## 📦 Model Weights
+## 💾 Finetuned Model
 
-Due to GitHub size limits, model weights are hosted on Kaggle:
+🚨 Due to GitHub storage limits, the fine-tuned LLaMA 3 8B-Instruct model is hosted externally:
 
-📥 **Download Finetuned LLM (~5 GB)**  
-https://www.kaggle.com/datasets/mohankumarkakarla/finetuned/data
+📥 [Download Finetuned Model (~5GB)](https://www.kaggle.com/datasets/mohankumarkakarla/finetuned/data)
 
-After downloading, place the model files in:
+> After downloading, place the model inside:
 
 ```
 ./models/llm_finetuned/
 ```
+
+Or for **Kaggle/Streamlit Cloud**, set `MERGED_MODEL_PATH` in `app.py` to the model directory location.
 
 ---
 
 ## 🚀 Running the App
 
 ### 1. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Launch Streamlit
+### 2. Run the Streamlit frontend
+
 ```bash
 streamlit run app.py
 ```
 
----
+> ✅ **Note**: If running inside a notebook (e.g., Kaggle), the last cell in `Code.ipynb` should launch:
 
-## 🛠️ Technologies Used
-
-- **Model**: LLaMA‑3‑8B‑Instruct (4‑bit)  
-- **Vector Store**: FAISS  
-- **Embeddings**: Sentence‑BERT  
-- **Frameworks**: PyTorch, Hugging Face Transformers, LangChain, Streamlit
+```python
+!streamlit run /kaggle/input/stream/fast_app.py
+```
 
 ---
 
+## 📜 License
 
+This project is open-sourced for **academic and research purposes only**. Please refer to [`LICENSE`](LICENSE) for more information.
 
 ---
-
-## 📃 License
-
-Released for **academic and research purposes only**. See `/LICENSE` for details.
