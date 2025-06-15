@@ -42,16 +42,17 @@ This project explores an **Augmentative and Alternative Communication (AAC)** sy
 
 ---
 ## 🏗️ System Architecture
-
-- **Frontend**: Streamlit interface  
+![System Architecture](media/architecture.png) 
+- **Frontend**: Streamlit interface
+   ![UI Screenshot](media/ui.png)
 - **Backend**:  
   - Finetuned LLaMA model (loaded via HuggingFace or local path)  
   - FAISS-based vector store to store and retrieve user-specific memory  
   - Personalization layer (prompt engineering with profiles)  
 - **Data Format**: JSON file for user histories (`user_profiles.json`)  
-- **Visuals**:  
-  ![System Architecture](media/architecture.png)  
-  ![UI Screenshot](media/ui.png)
+
+   
+  
 
 ---
 ## 📄 Academic Report
