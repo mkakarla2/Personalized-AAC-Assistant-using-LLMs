@@ -1,0 +1,9 @@
+streamlit>=1.22.0
+transformers>=4.30.0
+sentence-transformers>=2.2.2
+faiss-cpu>=1.7.4
+torch>=1.13.1
+langchain>=0.0.220
+pydantic>=1.10.4
+scikit-learn>=1.2.2
+typing-extensions>=4.5.0
