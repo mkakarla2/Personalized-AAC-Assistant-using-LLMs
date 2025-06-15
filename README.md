@@ -107,4 +107,4 @@ streamlit run app.py
 
 ## 📃 License
 
-Released for **academic and research purposes only**. See `LICENSE` for details.
+Released for **academic and research purposes only**. See `/LICENSE` for details.
