@@ -1,6 +1,6 @@
 # 🧠 Personalized AAC Assistant using LLMs
 
-This project presents an academic prototype for a **Personalized Augmentative and Alternative Communication (AAC) Assistant**, designed to help individuals with speech impairments generate expressive, personalized responses using a fine-tuned Large Language Model (LLM). It integrates **Retrieval-Augmented Generation (RAG)**, **user memory**, and **LLM prompting** to simulate natural, context-aware conversation.
+This project presents a **Personalized Augmentative and Alternative Communication (AAC) Assistant**, designed to help individuals with speech impairments generate expressive, personalized responses using a fine-tuned Large Language Model (LLM). It integrates **Retrieval-Augmented Generation (RAG)**, **user memory**, and **LLM prompting** to simulate natural, context-aware conversation.
 
 ---
 
