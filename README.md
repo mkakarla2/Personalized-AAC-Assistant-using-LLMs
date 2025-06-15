@@ -1,122 +1,112 @@
-# 🧠 Personalized AAC Assistant using LLMs
+# Personalized AAC Assistant Using Large Language Models (LLMs)
 
-This project presents an academic prototype for a **Personalized Augmentative and Alternative Communication (AAC) Assistant**, designed to help individuals with speech impairments generate expressive, personalized responses using a fine-tuned Large Language Model (LLM). It integrates **Retrieval-Augmented Generation (RAG)**, **user memory**, and **LLM prompting** to simulate natural, context-aware conversation.
+**Authors**: Mohan Kakarla, Udit Brahmadevara  
 
----
-
-## 🧾 Abstract
-
-Current AAC tools produce generic and impersonal outputs that often fail to reflect the personality, intent, and experiences of the user. This system overcomes those limitations by:
-- Embedding user memories and personality traits
-- Dynamically retrieving relevant content using FAISS
-- Injecting context into prompts for an LLM
-- Generating multiple personalized responses for user selection
-
-The project contributes toward inclusive communication technologies powered by state-of-the-art NLP.
 
 ---
 
-## 🧱 System Architecture
+## 🧠 Abstract
 
-![Architecture](media/architecture.png)
+Augmentative and Alternative Communication (AAC) systems assist individuals with speech impairments. However, most existing AAC tools generate generic and impersonal text that fails to reflect users’ identities, experiences, or communicative intent. This project leverages Large Language Models (LLMs), personalization, and Retrieval-Augmented Generation (RAG) to enable more expressive and contextually grounded AAC outputs.
 
----
-
-## 🖥️ Application Interface
-
-![UI](media/aac_ui.png)
-
-Users can:
-- Select predefined user profiles
-- Control chunk size, overlap, and generation length
-- Define emotional tone and intent
-- Preview multiple AI-generated suggestions
-
-🎥 [Demo Video](./Demo.mp4)
+We aim to build a system that understands the user’s history, preferences, and prior conversations and then generates tailored responses to improve inclusiveness, emotional accuracy, and overall communicative authenticity.
 
 ---
 
-## 📁 Project Structure
+## 🎯 Objectives
+
+- Develop a personalized AAC assistant using a finetuned LLM.
+- Incorporate Retrieval-Augmented Generation (RAG) for memory retrieval.
+- Enable persona-aware prompting to match a user's style, tone, and prior context.
+- Provide a user-friendly interface for AAC users to interact via the model.
+
+---
+
+## 🏗️ System Architecture
+
+- **Frontend**: Streamlit interface  
+- **Backend**:  
+  - Finetuned LLaMA model (loaded via HuggingFace or local path)  
+  - FAISS-based vector store to store and retrieve user-specific memory  
+  - Personalization layer (prompt engineering with profiles)  
+- **Data Format**: JSON file for user histories (`user_profiles.json`)  
+- **Visuals**:  
+  ![System Architecture](media/architecture.png)  
+  ![UI Screenshot](media/ui.png)
+
+---
+
+## 🧪 Key Features
+
+- 🤖 Finetuned LLM to generate expressive responses  
+- 🧠 Memory-aware RAG embeds user profile and history into every response  
+- 👤 Multiple personas and modes (friendly, emotional, fact-based)  
+- 🎥 Demo available: [Demo.mp4](Demo.mp4)
+
+---
+
+## 📁 File Structure
 
 ```
-.
-├── app.py                      # Streamlit app for interaction
-├── Code.ipynb                  # Prompt assembly and vector retrieval logic
-├── Training.ipynb              # Sentence embedding + FAISS index builder
-├── user_profiles.json          # Predefined users with traits and memories
-├── report.pdf                  # Full academic report
-├── Demo.mp4                    # Video walkthrough of the assistant
-├── requirements.txt            # Python dependencies
+├── app.py              # Streamlit frontend
+├── Code.ipynb          # Main logic development
+├── Training.ipynb      # Fine-tuning and model experimentation
+├── user_profiles.json  # Stores prior conversations and preferences
+├── requirements.txt    # Python dependencies
+├── report.pdf          # Academic paper
+├── Demo.mp4            # Demo video
 └── media/
-    ├── architecture.png        # System pipeline architecture
-    └── aac_ui.png              # Screenshot of UI interface
+    ├── architecture.png
+    └── ui.png
 ```
 
 ---
 
-## 🔍 Technologies Used
+## 📦 Model Weights
 
-- **Model**: LLaMA-3-8B-Instruct-bnb-4bit (finetuned, 5GB)
-- **Frontend**: Streamlit
-- **Retrieval**: FAISS + SentenceTransformers
-- **Prompt Injection**: LangChain
-- **Embeddings**: Sentence-BERT
+Due to GitHub size limits, model weights are hosted on Kaggle:
 
----
-
-## 🚀 How to Run
-
-```bash
-git clone https://github.com/your-username/aac-personalized-assistant.git
-cd aac-personalized-assistant
-
-# Optional: Setup virtual environment
-python -m venv venv
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### 🔗 Download the Finetuned Model
-
-📦 Download from Kaggle (~5GB):  
+📥 **Download Finetuned LLM (~5 GB)**  
 https://www.kaggle.com/datasets/mohankumarkakarla/finetuned/data
 
-Extract and place contents into:
+After downloading, place the model files in:
 
 ```
 ./models/llm_finetuned/
 ```
 
-Then launch the app:
+---
 
+## 🚀 Running the App
+
+### 1. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Launch Streamlit
 ```bash
 streamlit run app.py
 ```
 
 ---
 
-## 📘 Academic Report
+## 🛠️ Technologies Used
 
-📄 [report.pdf](./report.pdf)  
-🧑‍🏫 Developed for “LLMs for Societal Good” coursework at SUNY Buffalo.
-
----
-
-## 👤 Contributors
-
-- **Aravind Aripaka** — NLP Engineering, Streamlit UI, Prompt Design  
-- **Mohan Kakarla**, **Udit Brahmadevara** — Memory modeling, Report writing, Model integration
+- **Model**: LLaMA‑3‑8B‑Instruct (4‑bit)  
+- **Vector Store**: FAISS  
+- **Embeddings**: Sentence‑BERT  
+- **Frameworks**: PyTorch, Hugging Face Transformers, LangChain, Streamlit
 
 ---
 
-## 🔐 License
+## ✍️ Acknowledgments
 
-This repository is provided for academic and research purposes only.
+Project submitted for the **NLP course** at the University at Buffalo (Spring 2025).  
+We thank our instructor and peers for valuable feedback and support.
 
 ---
 
-## 📦 Requirements
+## 📃 License
 
-See [requirements.txt](./requirements.txt) for the full dependency list.
+Released for **academic and research purposes only**. See `LICENSE` for details.
