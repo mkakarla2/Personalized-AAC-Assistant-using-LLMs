@@ -49,7 +49,7 @@ This project explores an **Augmentative and Alternative Communication (AAC)** sy
   - Finetuned LLaMA model (loaded via HuggingFace or local path)  
   - FAISS-based vector store to store and retrieve user-specific memory  
   - Personalization layer (prompt engineering with profiles)  
-- **Data Format**: JSON file for user histories (`user_profiles.json`)  
+- **Data Format**: JSON file for user histories Refer to [`user_profiles.json`](user_profiles.json) for:  
 
    
   
