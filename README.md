@@ -1,7 +1,7 @@
 # Personalized AAC Assistant using RAG and LLaMA 3
 
 **Authors**: Mohan Kakarla, Udit Brahmadevara    
-**Domain**: Human-Centered AI| Natural Language Processing | Retrieval Augmented Generation | Assistive Communication | Personalization  
+**Domain**: Human-Centered AI | Natural Language Processing | Retrieval Augmented Generation | Assistive Communication | Personalization  
 
 ---
 
