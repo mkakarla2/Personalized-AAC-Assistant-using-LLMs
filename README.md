@@ -1,9 +1,7 @@
 # Personalized AAC Assistant Using Large Language Models (LLMs)
 
 **Authors**: Mohan Kakarla, Udit Brahmadevara  
-**Institution**: University at Buffalo  
-**Course**: NLP - Spring 2025  
-**Project**: LLMs for Societal Good — Augmentative and Alternative Communication (AAC)
+
 
 ---
 
