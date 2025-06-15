@@ -9,13 +9,7 @@
 
 This project explores an **Augmentative and Alternative Communication (AAC)** system powered by a **Retrieval-Augmented Generation (RAG)** pipeline and a **fine-tuned LLaMA 3 8B-Instruct** model. It is designed to support individuals with limited verbal communication by suggesting **personalized, context-aware responses** that reflect their unique persona and communication style.
 
----
 
-<div align="center">
-  <img src="assets/architecture.png" width="80%" alt="System Architecture" />
-</div>
-
----
 
 ## 🎯 Project Objectives
 
@@ -47,7 +41,19 @@ This project explores an **Augmentative and Alternative Communication (AAC)** sy
 - 🛠️ **Debugging panel**: Inspect prompt formatting and retrieved narratives live.
 
 ---
+## 🏗️ System Architecture
 
+- **Frontend**: Streamlit interface  
+- **Backend**:  
+  - Finetuned LLaMA model (loaded via HuggingFace or local path)  
+  - FAISS-based vector store to store and retrieve user-specific memory  
+  - Personalization layer (prompt engineering with profiles)  
+- **Data Format**: JSON file for user histories (`user_profiles.json`)  
+- **Visuals**:  
+  ![System Architecture](media/architecture.png)  
+  ![UI Screenshot](media/ui.png)
+
+---
 ## 📄 Academic Report
 
 Refer to [`report.pdf`](report.pdf) for:
