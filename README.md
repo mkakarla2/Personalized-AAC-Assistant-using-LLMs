@@ -30,8 +30,9 @@ We aim to build a system that understands the user’s history, preferences, and
   - FAISS-based vector store to store and retrieve user-specific memory  
   - Personalization layer (prompt engineering with profiles)  
 - **Data Format**: JSON file for user histories (`user_profiles.json`)  
-- **Visuals**:  
-  ![System Architecture](media/architecture.png)  
+- **Archutecture**:  
+  ![System Architecture](media/architecture.png)
+- **Fronted UI**:  
   ![UI Screenshot](media/ui.png)
 
 ---
@@ -100,10 +101,7 @@ streamlit run app.py
 
 ---
 
-## ✍️ Acknowledgments
 
-Project submitted for the **NLP course** at the University at Buffalo (Spring 2025).  
-We thank our instructor and peers for valuable feedback and support.
 
 ---
 
