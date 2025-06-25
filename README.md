@@ -55,7 +55,7 @@ This project explores an **Augmentative and Alternative Communication (AAC)** sy
   
 
 ---
-## 📄 Academic Report
+## 📄 Report
 
 Refer to [`report.pdf`](report.pdf) for:
 
